@@ -366,13 +366,13 @@ export class HorizonServer {
                   let sellerId: string = "";
                   switch (offerClaimedAtom.switch()) {
                     case xdr.ClaimAtomType.claimAtomTypeV0():
-                      sellerId = StrKey.encodeEd25519PublicKey(
-                        offerClaimed.sellerEd25519(),
+                      sellerId = StrKey.encodeDilithium2PublicKey(
+                        offerClaimed.sellerDilithium2(),
                       );
                       break;
                     case xdr.ClaimAtomType.claimAtomTypeOrderBook():
-                      sellerId = StrKey.encodeEd25519PublicKey(
-                        offerClaimed.sellerId().ed25519(),
+                      sellerId = StrKey.encodeDilithium2PublicKey(
+                        offerClaimed.sellerId().dilithium2(),
                       );
                       break;
                     // It shouldn't be possible for a claimed offer to have type

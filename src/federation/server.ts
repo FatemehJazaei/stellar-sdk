@@ -71,7 +71,7 @@ export class FederationServer {
    * @param {string} value Stellar Address (ex. `bob*stellar.org`)
    * @param {object} [opts] Options object
    * @returns {Promise<module:Federation.Api.Record>} A promise that resolves to the federation record
-   * @throws Will throw an error if the provided account ID is not a valid Ed25519 public key.
+   * @throws Will throw an error if the provided account ID is not a valid Dilithium2 public key.
    */
   public static async resolve(
     value: string,
@@ -79,7 +79,7 @@ export class FederationServer {
   ): Promise<Api.Record> {
     // Check if `value` is in account ID format
     if (value.indexOf("*") < 0) {
-      if (!StrKey.isValidEd25519PublicKey(value)) {
+      if (!StrKey.isValidDilithium2PublicKey(value)) {
         return Promise.reject(new Error("Invalid Account ID"));
       }
       return Promise.resolve({ account_id: value });
