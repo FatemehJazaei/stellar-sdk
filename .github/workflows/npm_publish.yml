@@ -1,0 +1,42 @@
+name: npm publish
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+          always-auth: true
+
+      - name: Install Depencencies
+        run: yarn install
+
+      - name: Build, Test, and Package
+        run: yarn preversion
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish npm package to both places
+        run: |
+          yarn publish --access public --tag protocol-22-beta
+          sed -i -e 's#"@stellar/stellar-sdk"#"stellar-sdk"#' package.json
+          yarn publish --tag protocol-22-beta
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Deprecate the old package
+        run: |
+          V=$(cat package.json | jq '.version' | sed -e 's/\"//g')
+          echo "Deprecating stellar-sdk@$V"
+          npm deprecate stellar-sdk@"<= $V" "⚠️ This package has moved to @stellar/stellar-sdk! 🚚"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
