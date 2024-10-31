@@ -1394,7 +1394,7 @@
 
 "@stellar/stellar-base@github:FatemehJazaei/stellar-base#main":
   version "12.1.1"
-  resolved "https://codeload.github.com/FatemehJazaei/stellar-base/tar.gz/dd9f706d7a2c4180accebc45c3d6ddbc3bde930c"
+  resolved "https://codeload.github.com/FatemehJazaei/stellar-base/tar.gz/0ba8789e2e1b70804d5102891deacc540cba6c45"
   dependencies:
     "@noble/post-quantum" "^0.2.0"
     "@stellar/js-xdr" "^3.1.2"
