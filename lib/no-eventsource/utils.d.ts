@@ -16,4 +16,5 @@ export declare class Utils {
      * @static
      */
     static validateTimebounds(transaction: Transaction, gracePeriod?: number): boolean;
+    static sleep(ms: number): Promise<void>;
 }

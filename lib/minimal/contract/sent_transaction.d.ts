@@ -73,13 +73,12 @@ export declare class SentTransaction<T> {
             stackTraceLimit: number;
         };
     };
-    constructor(_: any, // deprecated: used to take sentTransaction, need to wait for major release for breaking change
-    assembled: AssembledTransaction<T>);
+    constructor(assembled: AssembledTransaction<T>);
     /**
      * Initialize a `SentTransaction` from `options` and a `signed`
      * AssembledTransaction. This will also send the transaction to the network.
      */
-    static init: <U>(_: any, assembled: AssembledTransaction<U>) => Promise<SentTransaction<U>>;
+    static init: <U>(assembled: AssembledTransaction<U>) => Promise<SentTransaction<U>>;
     private send;
     get result(): T;
 }

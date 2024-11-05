@@ -608,7 +608,7 @@ export function verifyChallengeTxSigners(
       continue;
     }
 
-    // Ignore non-D... account/address signers.
+    // Ignore non-G... account/address signers.
     if (signer.charAt(0) !== "D") {
       continue;
     }

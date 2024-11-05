@@ -1284,12 +1284,12 @@
 
 "@noble/hashes@1.4.0":
   version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@noble/hashes/-/hashes-1.4.0.tgz#45814aa329f30e4fe0ba49426f49dfccdd066426"
+  resolved "https://registry.npmjs.org/@noble/hashes/-/hashes-1.4.0.tgz#45814aa329f30e4fe0ba49426f49dfccdd066426"
   integrity sha512-V1JJ1WTRUqHHrOSh597hURcMqVKVGL/ea3kv0gSnEdsEZ0/+VyPghM1lMNGc00z7CIQorSvbKpuJkxvuHbvdbg==
 
 "@noble/post-quantum@^0.2.0":
   version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@noble/post-quantum/-/post-quantum-0.2.0.tgz#50bbd13ae4ae2a62a56ffc41468e4c6acba90413"
+  resolved "https://registry.npmjs.org/@noble/post-quantum/-/post-quantum-0.2.0.tgz#50bbd13ae4ae2a62a56ffc41468e4c6acba90413"
   integrity sha512-6dXxLXv9qCdj22zTBIRN1J8RrF+OUWQD1vJHNcqCu4JAlSo7KnaRVc+ikDPqvgky43Rn7NGQoWqeo4wv8TAJ/g==
   dependencies:
     "@noble/hashes" "1.4.0"
